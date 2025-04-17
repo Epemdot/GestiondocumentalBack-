@@ -4,6 +4,7 @@ require('dotenv').config();
 const empresaRoutes = require('./routes/empresa.routes');
 const empleadoRoutes = require('./routes/empleado.routes');
 const abogadoRoutes = require('./routes/abogado.routes');
+const asistenteRoutes = require('./routes/asistente.routes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 app.use('/empresas', empresaRoutes);
 app.use('/empleados', empleadoRoutes);
 app.use('/abogados', abogadoRoutes);
+app.use('/asistentes', asistenteRoutes);
 
 // Inicia el servidor
 app.listen(PORT, () => {

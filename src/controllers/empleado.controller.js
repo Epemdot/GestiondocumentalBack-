@@ -55,6 +55,7 @@ exports.update = async (req,res) =>{
         nombre: req.body.EmpNombre || empleado.EmpNombre,
         Email: req.body.EmpEmail || empleado.EmpEmail,
         telefono: req.body.EmpTelefono || empleado.EmpTelefono,
+        IdEmpleado: req.body.IdEmpleado || empleado.IdEmpleado,
     };
 
     const result = await Empleado.update(req.params.id, updatedEmpleado);

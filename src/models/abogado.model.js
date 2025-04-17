@@ -29,8 +29,8 @@ class Abogado{
     static async update(IdAbogado, abogadoData) {
         try {
             const [result] = await pool.query(
-                'UPDATE Abogados SET AboNombre = ?, AboEmail = ?, AboTelefono = ? WHERE IdAbogado = ?',
-                [abogadoData.nombre, abogadoData.Email, abogadoData.telefono, IdAbogado]
+                'UPDATE Abogados SET AboNombre = ?, AboEmail = ?, AboTelefono = ? WHERE IdEmpleado = ?',
+                [abogadoData.nombre, abogadoData.Email, abogadoData.telefono, abogadoData.IdEmpleado]
             );
             return result;
         } catch (error) {
@@ -42,8 +42,8 @@ class Abogado{
     static async create(abogado) {
         try {
             const [result] = await pool.query(
-                'INSERT INTO Abogados (AboNombre, AboEmail, AboTelefono, IdAbogado) VALUES (?, ?, ?, ?)',
-                [abogado.Nombre, abogado.Email, abogado.Telefono, abogado.IdEmpresa]
+                'INSERT INTO Abogados (AboNombre, AboEmail, AboTelefono, IdEmpleado) VALUES (?, ?, ?, ?)',
+                [abogado.Nombre, abogado.Email, abogado.Telefono, abogado.IdEmpleado]
             );
             return {
                 IdAbogado: result.insertId,
