@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 const empresaRoutes = require('./routes/empresa.routes');
 const empleadoRoutes = require('./routes/empleado.routes');
+const abogadoRoutes = require('./routes/abogado.routes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/empresas', empresaRoutes);
 app.use('/empleados', empleadoRoutes);
+app.use('/abogados', abogadoRoutes);
 
 // Inicia el servidor
 app.listen(PORT, () => {
